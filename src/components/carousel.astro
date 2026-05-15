@@ -18,15 +18,19 @@ if (!products?.length) return null;
 const carouselProducts = [...products, ...products, ...products];
 ---
 
-<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pb-12 pt-16">
+<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pb-16 pt-16">
   <div class="mb-6 flex items-end justify-between border-b border-neutral-200 pb-4 dark:border-neutral-800">
     <div>
-      <p class="eyebrow text-neutral-500 dark:text-neutral-400">In rotation</p>
+      <p class="eyebrow text-[#8b5f1c] dark:text-[#d8b46a]">Commerce rail</p>
       <h2
         class="font-display mt-1 text-3xl font-medium tracking-tight md:text-4xl"
       >
-        Trending now
+        Product discovery without template constraints.
       </h2>
+      <p class="mt-2 max-w-xl text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+        A custom Astro carousel fed by Wix product data, ready for editorial
+        drops, seasonal capsules, or inventory-aware recommendations.
+      </p>
     </div>
     <a
       href="/search"

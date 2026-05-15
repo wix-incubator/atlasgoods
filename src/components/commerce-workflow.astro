@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    label: "Catalog",
+    title: "Products are the source of the interface.",
+    body: "Atlas reads Wix Stores product records for listings, category routes, images, prices, inventory, variants, and SEO metadata.",
+  },
+  {
+    label: "Cart",
+    title: "Stateful buying stays headless.",
+    body: "Add, remove, and quantity changes run through the Wix eCommerce cart API while the slide-out cart keeps the custom storefront feeling instant.",
+  },
+  {
+    label: "Checkout",
+    title: "The final handoff is commerce-ready.",
+    body: "Checkout URLs resolve through Wix, so payments, tax, fulfillment, and order management can remain operational behind this Astro experience.",
+  },
+];
+---
+
+<section class="bg-[#f6f1e8] text-[#17130f]">
+  <div
+    class="mx-auto grid w-full max-w-(--breakpoint-2xl) gap-10 px-4 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:py-20"
+  >
+    <div class="max-w-xl">
+      <p class="eyebrow text-[#8b5f1c]">Commerce control room</p>
+      <h2 class="font-display mt-3 text-4xl font-medium leading-tight md:text-6xl">
+        A storefront that shows the machinery.
+      </h2>
+      <p class="mt-5 text-base leading-7 text-[#5d5044]">
+        This homepage is not a static mood board. It points shoppers into live
+        product routes and exposes the real headless path from discovery to cart
+        to Wix checkout.
+      </p>
+    </div>
+    <div class="grid gap-3">
+      {
+        steps.map((step) => (
+          <article class="grid gap-4 border border-[#d8c7aa] bg-white/65 p-5 md:grid-cols-[9rem_1fr] md:p-6">
+            <p class="eyebrow text-[#8b5f1c]">{step.label}</p>
+            <div>
+              <h3 class="text-xl font-semibold tracking-tight">{step.title}</h3>
+              <p class="mt-2 leading-7 text-[#5d5044]">{step.body}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
