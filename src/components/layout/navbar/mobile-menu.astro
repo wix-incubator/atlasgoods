@@ -7,7 +7,7 @@ type Props = { menu: Menu[] };
 
 <button
   aria-label="Open mobile menu"
-  class="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white"
+  class="flex h-11 w-11 items-center justify-center rounded-md border border-[#d8c8ad] bg-white/78 text-[#171615] shadow-sm transition md:hidden dark:border-white/10 dark:bg-white/5 dark:text-white"
 >
   <label for="mobile-menu">
     <span class="sr-only">Open mobile menu</span>
@@ -32,16 +32,16 @@ type Props = { menu: Menu[] };
     <input type="checkbox" id="mobile-menu" class="peer hidden" />
     <label
       for="mobile-menu"
-      class="fixed inset-0 bg-black/30 opacity-0 hidden backdrop-blur-none transition-all ease-in-out duration-300 peer-checked:opacity-100 peer-checked:backdrop-blur-[.5px] peer-checked:block"
+      class="fixed inset-0 bg-black/38 opacity-0 hidden backdrop-blur-none transition-all ease-in-out duration-300 peer-checked:opacity-100 peer-checked:backdrop-blur-[1.5px] peer-checked:block"
       aria-hidden="true"
     >
     </label>
     <div
-      class="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6 dark:bg-black -translate-x-full transition-all ease-in-out duration-300 peer-checked:translate-x-0"
+      class="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-[#fbfaf6] pb-6 text-[#171615] shadow-[0_0_80px_rgba(0,0,0,0.22)] dark:bg-[#101112] dark:text-white -translate-x-full transition-all ease-in-out duration-300 peer-checked:translate-x-0"
     >
       <div class="p-4">
         <button
-          class="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white"
+          class="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-[#d8c8ad] bg-white/78 text-[#171615] shadow-sm transition dark:border-white/10 dark:bg-white/5 dark:text-white"
           aria-label="Close mobile menu"
         >
           <label for="mobile-menu">
@@ -57,8 +57,12 @@ type Props = { menu: Menu[] };
           Astro.props.menu.length ? (
             <ul class="flex w-full flex-col">
               {Astro.props.menu.map((item: Menu) => (
-                <li class="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white">
-                  <a href={item.path} data-astro-prefetch>
+                <li class="py-1 text-xl font-semibold">
+                  <a
+                    href={item.path}
+                    data-astro-prefetch
+                    class="block rounded-[8px] px-3 py-3 transition hover:bg-[#f1ebdf] dark:hover:bg-white/8"
+                  >
                     {item.title}
                   </a>
                 </li>

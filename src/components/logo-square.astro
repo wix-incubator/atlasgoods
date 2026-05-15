@@ -6,10 +6,10 @@ import LogoIcon from "./icons/logo.astro";
 
 <div
   class={clsx(
-    "flex flex-none items-center justify-center border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black",
+    "flex flex-none items-center justify-center border border-[#d8c8ad] bg-white shadow-sm dark:border-white/10 dark:bg-white/5",
     {
-      "h-[40px] w-[40px] rounded-xl": !Astro.props.size,
-      "h-[30px] w-[30px] rounded-lg": Astro.props.size === "sm",
+      "h-[40px] w-[40px] rounded-[8px]": !Astro.props.size,
+      "h-[30px] w-[30px] rounded-[8px]": Astro.props.size === "sm",
     }
   )}
 >

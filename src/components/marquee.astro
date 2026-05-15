@@ -1,27 +1,28 @@
 ---
 const items = [
-  "Wix Stores catalog",
+  "Wix Stores catalog sync",
+  "Live product routes",
   "Headless cart mutations",
-  "Variant-aware product pages",
+  "Variant-aware pages",
   "Checkout handoff ready",
 ];
 ---
 
 <div
-  class="overflow-hidden border-y border-[#d8c7aa] bg-[#f6f1e8] py-2.5 dark:border-neutral-800 dark:bg-black"
+  class="overflow-hidden border-y border-[#d7c7ab] bg-[#f5efe3] py-2.5 dark:border-white/10 dark:bg-[#151413]"
 >
   <div class="flex w-max animate-marquee">
     {
       [0, 1].map(() => (
         <div
-          class="flex shrink-0 items-center gap-12 pr-12 text-[11px] font-medium uppercase tracking-[0.22em] text-[#5b4631] dark:text-neutral-300"
+          class="flex shrink-0 items-center gap-10 pr-10 text-[11px] font-bold uppercase text-[#4c5b48] dark:text-[#d8d2c5]"
           aria-hidden={false}
         >
           {items.map((item) => (
-            <span class="flex items-center gap-12">
+            <span class="flex items-center gap-10">
               <span>{item}</span>
-              <span class="opacity-30" aria-hidden="true">
-                ●
+              <span class="text-[#b85b45] opacity-70" aria-hidden="true">
+                /
               </span>
             </span>
           ))}

@@ -10,12 +10,17 @@ type Props = {
 };
 ---
 
-<div class="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
-  <h1 class="mb-2 text-5xl font-medium">{Astro.props.product.title}</h1>
-  <div class="mr-auto w-auto rounded-full bg-blue-600 p-2 text-sm text-white">
+<div
+  class="rounded-[8px] border border-[#dfd2be] bg-white/78 p-6 shadow-[0_18px_50px_rgba(23,22,21,0.08)] backdrop-blur dark:border-white/10 dark:bg-white/6 dark:shadow-none"
+>
+  <div class="mb-6 flex flex-col border-b border-[#dfd2be] pb-6 dark:border-white/10">
+  <p class="eyebrow text-[#4c5b48] dark:text-[#c8e6dc]">Wix Stores product</p>
+  <h1 class="font-display mt-2 text-4xl font-medium leading-tight md:text-5xl">{Astro.props.product.title}</h1>
+  <div class="mr-auto mt-4 w-auto rounded-full bg-[#e5efe0] px-3 py-2 text-sm font-bold text-[#171615] dark:bg-white/10 dark:text-white">
     <Price
       amount={Astro.props.product.priceRange.maxVariantPrice.amount}
       currencyCode={Astro.props.product.priceRange.maxVariantPrice.currencyCode}
+      currencyCodeClass="ml-1 text-xs font-semibold text-[#655d51] dark:text-[#d8d2c5]"
     />
   </div>
 </div>
@@ -26,14 +31,30 @@ type Props = {
 {
   Astro.props.product.descriptionHtml ? (
     <Prose
-      class="mb-6 text-sm leading-tight dark:text-white/60"
+      class="mb-6 text-sm leading-7 text-[#655d51] dark:text-[#d8d2c5]"
       html={Astro.props.product.descriptionHtml}
     />
   ) : null
 }
+
+<div class="mb-6 grid grid-cols-3 gap-2 text-xs">
+  <div class="rounded-[8px] bg-[#f1ebdf] p-3 dark:bg-white/6">
+    <span class="block font-extrabold text-[#171615] dark:text-white">Catalog</span>
+    <span class="mt-1 block text-[#655d51] dark:text-[#d8d2c5]">live data</span>
+  </div>
+  <div class="rounded-[8px] bg-[#f1ebdf] p-3 dark:bg-white/6">
+    <span class="block font-extrabold text-[#171615] dark:text-white">Variants</span>
+    <span class="mt-1 block text-[#655d51] dark:text-[#d8d2c5]">URL state</span>
+  </div>
+  <div class="rounded-[8px] bg-[#f1ebdf] p-3 dark:bg-white/6">
+    <span class="block font-extrabold text-[#171615] dark:text-white">Cart</span>
+    <span class="mt-1 block text-[#655d51] dark:text-[#d8d2c5]">Wix API</span>
+  </div>
+</div>
 
 <AddToCart
   productId={Astro.props.product.id}
   variants={Astro.props.product.variants}
   availableForSale={Astro.props.product.availableForSale}
 />
+</div>

@@ -17,29 +17,30 @@ if (homepageItems.length < 3) return null;
 const [firstProduct, secondProduct, thirdProduct] = homepageItems;
 ---
 
-<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pt-10 pb-4 md:pt-16">
+<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pb-6 pt-12 md:pt-20">
   <div class="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-end md:justify-between">
     <div class="max-w-2xl">
-      <p class="eyebrow text-[#8b5f1c] dark:text-[#d8b46a]">Live product grid</p>
+      <p class="eyebrow text-[#4c5b48] dark:text-[#c8e6dc]">Live product grid</p>
       <h2
-        class="font-display mt-1 text-4xl font-medium tracking-tight md:text-5xl"
+        class="font-display mt-2 text-4xl font-medium leading-tight md:text-5xl"
       >
-        Merchandised from Wix Stores.
+        Merchandised like a campaign, wired like a store.
       </h2>
-      <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-300 md:text-base">
-        These tiles use the same product records that power search, product
-        details, cart lines, and checkout.
+      <p class="mt-3 text-sm leading-6 text-[#655d51] dark:text-[#d8d2c5] md:text-base">
+        These editorial tiles are still real product links, pulled from Wix
+        Stores and ready to continue into detail pages, variant selection, cart,
+        and checkout.
       </p>
     </div>
     <a
       href="/search"
-      class="inline-flex w-fit items-center rounded-full border border-neutral-300 px-5 py-2 text-sm font-medium transition hover:border-neutral-900 hover:bg-neutral-900 hover:text-white dark:border-neutral-700 dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+      class="inline-flex w-fit items-center rounded-full border border-[#d8c8ad] bg-white/70 px-5 py-2 text-sm font-bold text-[#171615] shadow-sm transition hover:-translate-y-0.5 hover:border-[#4c5b48] hover:bg-[#171615] hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
     >
       Open catalog
     </a>
   </div>
   <div
-    class="grid gap-3 md:grid-cols-6 md:grid-rows-2 md:gap-4 lg:max-h-[calc(100vh-160px)]"
+    class="grid gap-3 md:grid-cols-6 md:grid-rows-2 md:gap-4 lg:max-h-[calc(100vh-150px)]"
   >
     <ThreeItemGridItem size="full" item={firstProduct} />
     <ThreeItemGridItem size="half" item={secondProduct} />

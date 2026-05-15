@@ -14,18 +14,18 @@ const position = Astro.props.position || "bottom";
 
 <div
   class={clsx(
-    "absolute bottom-0 left-0 z-10 flex w-full items-end justify-between gap-3 bg-gradient-to-t from-black/55 via-black/25 to-transparent px-5 pb-5 pt-16 text-white",
+    "absolute inset-x-3 bottom-3 z-10 flex items-end justify-between gap-3 rounded-[8px] border border-white/16 bg-[#111211]/72 p-3 text-white shadow-[0_12px_36px_rgba(0,0,0,0.22)] backdrop-blur-md",
     {
-      "lg:px-10 lg:pb-12 lg:pt-32": position === "center",
+      "lg:inset-x-6 lg:bottom-6 lg:p-5": position === "center",
     }
   )}
 >
   <h3
     class={clsx(
-      "line-clamp-2 grow leading-snug tracking-tight",
+      "line-clamp-2 min-w-0 grow leading-snug",
       position === "center"
         ? "text-2xl font-semibold lg:text-4xl"
-        : "text-base font-medium",
+        : "text-base font-semibold",
     )}
   >
     {Astro.props.title}

@@ -18,9 +18,9 @@ type Props = {
 
 <div
   class={clsx(
-    "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900",
+    "group relative flex h-full w-full items-center justify-center overflow-hidden rounded-[8px] border border-[#ded2bf] bg-[#ede8df] shadow-[0_14px_34px_rgba(23,22,21,0.08)] transition duration-500 dark:border-white/10 dark:bg-[#191817] dark:shadow-none",
     {
-      "ring-2 ring-neutral-900 ring-offset-2 ring-offset-neutral-50 dark:ring-neutral-50 dark:ring-offset-neutral-900":
+      "ring-2 ring-[#4c5b48] ring-offset-2 ring-offset-[#fbfaf6] dark:ring-[#c8e6dc] dark:ring-offset-[#101112]":
         Astro.props.active,
     }
   )}
@@ -29,7 +29,7 @@ type Props = {
     Astro.props.src ? (
       <Image
         class={clsx("relative h-full w-full object-cover", {
-          "transition-transform duration-700 ease-out group-hover:scale-[1.03]":
+          "transition-transform duration-700 ease-out group-hover:scale-[1.045]":
             Astro.props.isInteractive ?? true,
         })}
         {...Astro.props}

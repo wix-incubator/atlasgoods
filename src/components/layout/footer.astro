@@ -11,29 +11,40 @@ const copyrightSuffix =
 const menu = await getMenu("next-js-frontend-footer-menu");
 ---
 
-<footer class="text-sm text-neutral-500 dark:text-neutral-400">
+<footer class="bg-[#111211] text-sm text-[#d8d2c5]">
   <div
-    class="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700"
+    class="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 border-t border-white/10 px-4 py-12 text-sm md:flex-row md:items-start md:justify-between md:gap-12"
   >
-    <div>
+    <div class="max-w-sm">
       <a
-        class="flex items-center gap-2 text-black md:pt-1 dark:text-white"
+        class="flex items-center gap-2 text-white md:pt-1"
         href="/"
       >
         <LogoSquare size="sm" />
-        <span class="uppercase">{SITE_NAME}</span>
+        <span class="font-extrabold uppercase">{SITE_NAME}</span>
       </a>
+      <p class="mt-4 leading-6 text-[#aaa396]">
+        Powered by Wix Headless commerce with live catalog routes, custom
+        cart behavior, and checkout powered by Wix.
+      </p>
     </div>
     <FooterMenu menu={menu} />
   </div>
-  <div class="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
+  <div class="border-t border-white/10 py-6 text-sm">
     <div
-      class="mx-auto w-full max-w-7xl px-4 text-center md:px-4 min-[1320px]:px-0"
+      class="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-2 px-4 text-center md:flex-row md:items-center md:justify-between md:text-left"
     >
       <p>
         &copy; {currentYear}
         {copyrightName}{copyrightSuffix} All rights reserved.
       </p>
+      <div class="flex flex-col gap-2 font-semibold text-[#c8e6dc] md:items-end">
+        <p>
+          Powered by Wix Headless | Built with
+          <a class="underline underline-offset-4 hover:text-white" href="https://www.wix-headless.dev" target="_blank" rel="noreferrer">wix-headless.dev</a>
+        </p>
+        <a class="underline underline-offset-4 hover:text-white" href="https://github.com/wix-incubator/atlasgoods" target="_blank" rel="noreferrer">View source on GitHub</a>
+      </div>
     </div>
   </div>
 </footer>

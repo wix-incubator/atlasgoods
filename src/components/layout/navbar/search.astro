@@ -6,10 +6,10 @@
   <input
     type="text"
     name="q"
-    placeholder="Search for products..."
+    placeholder="Search the live catalog"
     autocomplete="off"
     value={Astro.url.searchParams?.get("q") || ""}
-    class="text-md w-full rounded-lg border bg-white px-4 py-2 text-black placeholder:text-neutral-500 md:text-sm dark:border-neutral-800 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400"
+    class="text-md h-10 w-full rounded-full border border-[#d8c8ad] bg-white/78 px-4 pr-10 text-black shadow-sm outline-none transition placeholder:text-[#8a8173] hover:border-[#b89b5e] focus:border-[#4c5b48] md:text-sm dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-[#b7aea0]"
   />
   <div class="absolute right-0 top-0 mr-3 flex h-full items-center">
     <svg
@@ -18,7 +18,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6 h-4"
+      class="size-6 h-4 text-[#4c5b48] dark:text-[#d8d2c5]"
     >
       <path
         stroke-linecap="round"

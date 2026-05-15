@@ -18,23 +18,23 @@ if (!products?.length) return null;
 const carouselProducts = [...products, ...products, ...products];
 ---
 
-<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pb-16 pt-16">
-  <div class="mb-6 flex items-end justify-between border-b border-neutral-200 pb-4 dark:border-neutral-800">
+<section class="mx-auto w-full max-w-(--breakpoint-2xl) px-4 pb-20 pt-16 md:pb-24">
+  <div class="mb-6 flex flex-col gap-4 border-b border-[#dfd2be] pb-5 md:flex-row md:items-end md:justify-between dark:border-white/10">
     <div>
-      <p class="eyebrow text-[#8b5f1c] dark:text-[#d8b46a]">Commerce rail</p>
+      <p class="eyebrow text-[#4c5b48] dark:text-[#c8e6dc]">Commerce rail</p>
       <h2
-        class="font-display mt-1 text-3xl font-medium tracking-tight md:text-4xl"
+        class="font-display mt-2 text-3xl font-medium leading-tight md:text-4xl"
       >
-        Product discovery without template constraints.
+        Discovery without template constraints.
       </h2>
-      <p class="mt-2 max-w-xl text-sm leading-6 text-neutral-600 dark:text-neutral-300">
+      <p class="mt-2 max-w-xl text-sm leading-6 text-[#655d51] dark:text-[#d8d2c5]">
         A custom Astro carousel fed by Wix product data, ready for editorial
         drops, seasonal capsules, or inventory-aware recommendations.
       </p>
     </div>
     <a
       href="/search"
-      class="hidden text-sm font-medium underline underline-offset-4 hover:no-underline md:inline"
+      class="hidden rounded-full border border-[#d8c8ad] bg-white/70 px-5 py-2 text-sm font-bold text-[#171615] shadow-sm transition hover:-translate-y-0.5 hover:border-[#4c5b48] hover:bg-[#171615] hover:text-white md:inline-flex dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
     >
       Shop all
     </a>
@@ -43,7 +43,7 @@ const carouselProducts = [...products, ...products, ...products];
     class="relative -mx-4 [mask-image:linear-gradient(to_right,transparent_0,black_3rem,black_calc(100%-3rem),transparent_100%)]"
   >
     <div class="overflow-x-auto px-4 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      <ul class="flex animate-carousel gap-3 md:gap-4">
+      <ul class="flex animate-carousel gap-3 md:gap-4 hover:[animation-play-state:paused]">
         {
           carouselProducts.map((product) => (
             <li class="relative aspect-[3/4] h-[42vh] max-h-[420px] w-[58%] max-w-[340px] flex-none md:w-1/4">

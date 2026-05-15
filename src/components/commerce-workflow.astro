@@ -1,46 +1,74 @@
 ---
 const steps = [
   {
-    label: "Catalog",
-    title: "Products are the source of the interface.",
-    body: "Atlas reads Wix Stores product records for listings, category routes, images, prices, inventory, variants, and SEO metadata.",
+    label: "01 Catalog",
+    title: "Wix Stores records become the merchandising layer.",
+    body: "Listings, collection routes, hero imagery, prices, inventory, descriptions, and SEO metadata all come from the same catalog source.",
+    detail: "Products V3 + Categories",
   },
   {
-    label: "Cart",
-    title: "Stateful buying stays headless.",
-    body: "Add, remove, and quantity changes run through the Wix eCommerce cart API while the slide-out cart keeps the custom storefront feeling instant.",
+    label: "02 Cart",
+    title: "Buying state stays live inside a custom interface.",
+    body: "Add, remove, and quantity updates run through the Wix eCommerce cart API while the storefront keeps its own tactile slide-out cart.",
+    detail: "Current Cart API",
   },
   {
-    label: "Checkout",
-    title: "The final handoff is commerce-ready.",
-    body: "Checkout URLs resolve through Wix, so payments, tax, fulfillment, and order management can remain operational behind this Astro experience.",
+    label: "03 Checkout",
+    title: "The handoff preserves the operational backbone.",
+    body: "Checkout resolves through Wix, so payments, tax, fulfillment, and order management stay ready behind the custom Astro experience.",
+    detail: "Wix Checkout URL",
   },
+];
+
+const metrics = [
+  ["Astro", "fast storefront shell"],
+  ["Wix SDK", "commerce data access"],
+  ["SEO", "product metadata ready"],
+  ["Cart", "server action mutations"],
 ];
 ---
 
-<section class="bg-[#f6f1e8] text-[#17130f]">
+<section class="bg-[#edf4e9] text-[#171615] dark:bg-[#121816] dark:text-[#f8f5ed]">
   <div
-    class="mx-auto grid w-full max-w-(--breakpoint-2xl) gap-10 px-4 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:py-20"
+    class="mx-auto grid w-full max-w-(--breakpoint-2xl) gap-10 px-4 py-16 lg:grid-cols-[0.82fr_1.18fr] lg:py-24"
   >
-    <div class="max-w-xl">
-      <p class="eyebrow text-[#8b5f1c]">Commerce control room</p>
+    <div class="max-w-xl self-center">
+      <p class="eyebrow text-[#4c5b48] dark:text-[#c8e6dc]">Commerce control room</p>
       <h2 class="font-display mt-3 text-4xl font-medium leading-tight md:text-6xl">
-        A storefront that shows the machinery.
+        Premium on the surface. Operational underneath.
       </h2>
-      <p class="mt-5 text-base leading-7 text-[#5d5044]">
-        This homepage is not a static mood board. It points shoppers into live
-        product routes and exposes the real headless path from discovery to cart
-        to Wix checkout.
+      <p class="mt-5 text-base leading-7 text-[#5b6258] dark:text-[#d8d2c5]">
+        Atlas Goods keeps the shopper inside a custom editorial storefront while
+        every commercial action still traces back to Wix Headless commerce.
       </p>
+      <div class="mt-8 grid grid-cols-2 gap-3">
+        {
+          metrics.map(([name, value]) => (
+            <div class="rounded-[8px] border border-[#cad9c3] bg-white/58 p-4 shadow-sm dark:border-white/10 dark:bg-white/5">
+              <span class="block text-sm font-extrabold text-[#171615] dark:text-white">
+                {name}
+              </span>
+              <span class="mt-1 block text-sm leading-5 text-[#667061] dark:text-[#c8c0b2]">
+                {value}
+              </span>
+            </div>
+          ))
+        }
+      </div>
     </div>
     <div class="grid gap-3">
       {
         steps.map((step) => (
-          <article class="grid gap-4 border border-[#d8c7aa] bg-white/65 p-5 md:grid-cols-[9rem_1fr] md:p-6">
-            <p class="eyebrow text-[#8b5f1c]">{step.label}</p>
+          <article class="group grid gap-5 rounded-[8px] border border-[#cad9c3] bg-[#fbfaf6]/82 p-5 shadow-[0_18px_50px_rgba(44,54,39,0.08)] transition hover:-translate-y-0.5 hover:border-[#9eb294] hover:bg-white md:grid-cols-[9.5rem_1fr] md:p-6 dark:border-white/10 dark:bg-white/6 dark:shadow-none dark:hover:border-white/20 dark:hover:bg-white/8">
             <div>
-              <h3 class="text-xl font-semibold tracking-tight">{step.title}</h3>
-              <p class="mt-2 leading-7 text-[#5d5044]">{step.body}</p>
+              <p class="eyebrow text-[#4c5b48] dark:text-[#c8e6dc]">{step.label}</p>
+              <p class="mt-4 hidden rounded-full bg-[#e0eadb] px-3 py-1 text-xs font-bold text-[#4c5b48] md:inline-flex dark:bg-white/10 dark:text-[#d8d2c5]">
+                {step.detail}
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold md:text-2xl">{step.title}</h3>
+              <p class="mt-2 leading-7 text-[#5b6258] dark:text-[#d8d2c5]">{step.body}</p>
             </div>
           </article>
         ))

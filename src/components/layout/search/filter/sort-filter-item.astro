@@ -24,18 +24,18 @@ const DynamicTag = active ? "p" : "a";
     data-astro-prefetch={!active ? false : undefined}
     href={href}
     class={clsx(
-      "group relative flex items-center gap-2 py-1.5 text-sm transition-colors",
+      "group relative flex items-center gap-2 rounded-full px-2 py-1.5 text-sm transition-colors",
       active
-        ? "font-medium text-black dark:text-white"
-        : "text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white",
+        ? "bg-[#e5efe0] font-bold text-[#171615] dark:bg-white/10 dark:text-white"
+        : "text-[#655d51] hover:bg-[#f1ebdf] hover:text-[#171615] dark:text-[#d8d2c5] dark:hover:bg-white/8 dark:hover:text-white",
     )}
   >
     <span
       class={clsx(
         "h-1 w-1 flex-none rounded-full transition-all",
         active
-          ? "bg-black dark:bg-white"
-          : "bg-transparent group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600",
+          ? "bg-[#4c5b48] dark:bg-[#c8e6dc]"
+          : "bg-transparent group-hover:bg-[#b89b5e] dark:group-hover:bg-[#c8e6dc]",
       )}
       aria-hidden="true"></span>
     <span>{Astro.props.item.title}</span>

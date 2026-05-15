@@ -6,10 +6,10 @@ import FilterList from "./filter/filter-list.astro";
 ---
 
 <div
-  class="mx-auto flex max-w-(--breakpoint-2xl) flex-col gap-10 px-4 pb-16 pt-8 text-black md:flex-row md:gap-12 md:pt-12 dark:text-white"
+  class="mx-auto flex max-w-(--breakpoint-2xl) flex-col gap-8 px-4 pb-16 pt-8 text-[#171615] md:flex-row md:gap-12 md:pt-12 dark:text-[#f8f5ed]"
 >
   <aside
-    class="order-first w-full flex-none md:sticky md:top-6 md:max-w-[180px] md:self-start"
+    class="order-first w-full flex-none md:sticky md:top-28 md:max-w-[190px] md:self-start"
   >
     <Collections />
   </aside>
@@ -17,7 +17,7 @@ import FilterList from "./filter/filter-list.astro";
     <slot />
   </div>
   <aside
-    class="order-none flex-none md:sticky md:top-6 md:order-last md:w-[160px] md:self-start"
+    class="order-none flex-none md:sticky md:top-28 md:order-last md:w-[170px] md:self-start"
   >
     <FilterList list={sorting} title="Sort by" />
   </aside>

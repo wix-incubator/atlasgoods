@@ -44,15 +44,20 @@ const cart = await getCart();
   />
   <label
     for="cart-modal"
-    class="fixed inset-0 bg-black/30 opacity-0 hidden backdrop-blur-none transition-all ease-in-out duration-300 peer-checked:opacity-100 peer-checked:backdrop-blur-[.5px] peer-checked:block"
+    class="fixed inset-0 bg-black/38 opacity-0 hidden backdrop-blur-none transition-all ease-in-out duration-300 peer-checked:opacity-100 peer-checked:backdrop-blur-[1.5px] peer-checked:block"
     aria-hidden="true"
   >
   </label>
   <div
-    class="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-black/80 dark:text-white translate-x-full transition-all ease-in-out duration-300 peer-checked:translate-x-0"
+    class="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-[#dfd2be] bg-[#fbfaf6]/92 p-6 text-[#171615] shadow-[0_0_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:w-[420px] dark:border-white/10 dark:bg-[#101112]/92 dark:text-[#f8f5ed] translate-x-full transition-all ease-in-out duration-300 peer-checked:translate-x-0"
   >
     <div class="flex items-center justify-between">
-      <p class="text-lg font-semibold">My Cart</p>
+      <div>
+        <p class="text-lg font-extrabold">Cart</p>
+        <p class="mt-1 text-xs font-semibold uppercase text-[#4c5b48] dark:text-[#c8e6dc]">
+          Wix checkout handoff
+        </p>
+      </div>
       <button aria-label="Close cart">
         <label for="cart-modal">
           <span class="sr-only">Close cart</span>
@@ -66,6 +71,9 @@ const cart = await getCart();
         <div class="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
           <ShoppingCartIcon class="h-16" />
           <p class="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+          <p class="mt-2 max-w-64 text-center text-sm leading-6 text-[#655d51] dark:text-[#d8d2c5]">
+            Add a product to see live cart state before the Wix checkout handoff.
+          </p>
         </div>
       ) : (
         <div class="flex h-full flex-col justify-between overflow-hidden p-1">
@@ -91,13 +99,13 @@ const cart = await getCart();
                 );
 
                 return (
-                  <li class="flex w-full flex-col border-b border-neutral-300 dark:border-neutral-700">
+                  <li class="flex w-full flex-col border-b border-[#dfd2be] dark:border-white/10">
                     <div class="relative flex w-full flex-row justify-between px-1 py-4">
                       <div class="absolute z-40 -ml-1 -mt-2">
                         <DeleteItemButton item={item} />
                       </div>
                       <div class="flex flex-row">
-                        <div class="relative h-16 w-16 overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+                        <div class="relative h-16 w-16 overflow-hidden rounded-[8px] border border-[#d8c8ad] bg-[#eee8dd] shadow-sm dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
                           {item.merchandise.product.featuredImage?.url ? (
                             <Image
                               class="h-full w-full object-cover"
@@ -111,7 +119,7 @@ const cart = await getCart();
                               src={item.merchandise.product.featuredImage.url}
                             />
                           ) : (
-                            <div class="flex h-full w-full items-center justify-center text-[10px] uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
+                            <div class="flex h-full w-full items-center justify-center text-[10px] font-bold uppercase text-[#8a8173] dark:text-[#b7aea0]">
                               No image
                             </div>
                           )}
@@ -121,11 +129,11 @@ const cart = await getCart();
                           class="z-30 ml-2 flex flex-row space-x-4"
                         >
                           <div class="flex flex-1 flex-col text-base">
-                            <span class="leading-tight">
+                            <span class="leading-tight font-semibold">
                               {item.merchandise.product.title}
                             </span>
                             {item.merchandise.title !== DEFAULT_OPTION ? (
-                              <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                              <p class="text-sm text-[#655d51] dark:text-[#d8d2c5]">
                                 {item.merchandise.title}
                               </p>
                             ) : null}
@@ -138,7 +146,7 @@ const cart = await getCart();
                           amount={item.cost.totalAmount.amount}
                           currencyCode={item.cost.totalAmount.currencyCode}
                         />
-                        <div class="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
+                        <div class="ml-auto flex h-9 flex-row items-center rounded-full border border-[#d8c8ad] bg-white/64 dark:border-white/10 dark:bg-white/5">
                           <EditItemQuantityButton item={item} type="minus" />
                           <p class="w-6 text-center">
                             <span class="w-full text-sm">{item.quantity}</span>
@@ -151,34 +159,34 @@ const cart = await getCart();
                 );
               })}
           </ul>
-          <div class="py-4 text-sm text-neutral-500 dark:text-neutral-400">
-            <div class="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
+          <div class="rounded-[8px] border border-[#dfd2be] bg-white/60 p-4 text-sm text-[#655d51] dark:border-white/10 dark:bg-white/5 dark:text-[#d8d2c5]">
+            <div class="mb-3 flex items-center justify-between border-b border-[#dfd2be] pb-2 dark:border-white/10">
               <p>Taxes</p>
               <Price
-                class="text-right text-base text-black dark:text-white"
+                class="text-right text-base text-[#171615] dark:text-white"
                 amount={cart.cost.totalTaxAmount.amount}
                 currencyCode={cart.cost.totalTaxAmount.currencyCode}
               />
             </div>
-            <div class="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
+            <div class="mb-3 flex items-center justify-between border-b border-[#dfd2be] pb-2 pt-1 dark:border-white/10">
               <p>Shipping</p>
               <p class="text-right">Calculated at checkout</p>
             </div>
-            <div class="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-              <p>Total</p>
+            <div class="flex items-center justify-between pt-1">
+              <p class="font-bold text-[#171615] dark:text-white">Total</p>
               <Price
-                class="text-right text-base text-black dark:text-white"
+                class="text-right text-lg font-extrabold text-[#171615] dark:text-white"
                 amount={cart.cost.totalAmount.amount}
                 currencyCode={cart.cost.totalAmount.currencyCode}
               />
             </div>
           </div>
-          <form method="get" action="/api/checkout" data-astro-reload>
+          <form method="get" action="/api/checkout" data-astro-reload class="mt-4">
             <button
-              class="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+              class="block w-full rounded-full bg-[#171615] p-3.5 text-center text-sm font-bold text-white shadow-[0_16px_34px_rgba(23,22,21,0.2)] transition hover:-translate-y-0.5 hover:bg-[#4c5b48] dark:bg-[#f7f2e7] dark:text-[#171615] dark:hover:bg-white"
               type="submit"
             >
-              {false ? <LoadingDots class="bg-white" /> : "Proceed to Checkout"}
+              {false ? <LoadingDots class="bg-white" /> : "Proceed to Wix checkout"}
             </button>
           </form>
         </div>

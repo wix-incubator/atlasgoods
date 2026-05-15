@@ -35,7 +35,7 @@ const updateItemQuantityResult = Astro.getActionResult(
       ? "Increase item quantity"
       : "Reduce item quantity"}
     class={clsx(
-      "ease flex h-full min-w-[36px] max-w-[36px] flex-none items-center justify-center rounded-full p-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80",
+      "ease flex h-full min-w-[36px] max-w-[36px] flex-none items-center justify-center rounded-full p-2 text-[#171615] transition-all duration-200 hover:bg-[#e5efe0] dark:text-white dark:hover:bg-white/10",
       {
         "ml-auto": Astro.props.type === "minus",
       }
@@ -43,9 +43,9 @@ const updateItemQuantityResult = Astro.getActionResult(
   >
     {
       Astro.props.type === "plus" ? (
-        <PlusIcon class="h-4 w-4 dark:text-neutral-500" />
+        <PlusIcon class="h-4 w-4" />
       ) : (
-        <MinusIcon class="h-4 w-4 dark:text-neutral-500" />
+        <MinusIcon class="h-4 w-4" />
       )
     }
   </button>

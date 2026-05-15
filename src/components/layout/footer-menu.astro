@@ -10,7 +10,7 @@ if (!Astro.props.menu.length) return null;
 ---
 
 <nav>
-  <ul>
+  <ul class="flex flex-col gap-1 md:items-end">
     {
       Astro.props.menu.map((item) => (
         <Fragment>
@@ -18,9 +18,9 @@ if (!Astro.props.menu.length) return null;
             <a
               href={item.path === "//" ? "/" : item.path}
               class={clsx(
-                "block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm dark:hover:text-neutral-300",
+                "block rounded-full px-3 py-2 text-lg font-semibold text-[#aaa396] transition hover:bg-white/8 hover:text-white md:inline-block md:text-sm",
                 {
-                  "text-black dark:text-neutral-300":
+                  "bg-white/8 text-white":
                     Astro.url.pathname === item.path,
                 }
               )}
