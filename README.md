@@ -6,7 +6,7 @@ This website is powered by Wix Headless and built using [wix-headless.dev](https
 
 ## Links
 
-- Live site: [https://atlasgoods.store](https://atlasgoods.store)
+- Live site: [https://wayfinderclub.club/](https://wayfinderclub.club/)
 - Source: [https://github.com/wix-incubator/atlasgoods](https://github.com/wix-incubator/atlasgoods)
 - Wix site ID: `f28bf272-b4db-4556-b006-74cb6e37a9d0`
 
